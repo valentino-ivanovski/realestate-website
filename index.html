@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
     <title>LuxEstate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
     <style>
-        
         body {
             font-family: 'Quicksand', sans-serif;
             font-weight: 200;
@@ -39,10 +41,6 @@
             color: black;
         }
 
-        #header.scrolled button{
-            
-        }
-
         #header.blurred {
             backdrop-filter: blur(10px);
         }
@@ -60,30 +58,43 @@
             opacity: 0;
         }
 
-        .contact-visible{
+        .contact-visible {
             opacity: 1;
         }
 
-        .logo{
+        .logo {
             transition: all 0.3s ease-out;
         }
 
-        .logo:hover{
+        .logo:hover {
             opacity: 80%;
             cursor: pointer;
         }
 
+        .hide-scrollbar {
+            scrollbar-width: none;
+            /* firefox */
+            -ms-overflow-style: none;
+            /* ie and edge */
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+            /* chrome, safari, and opera */
+        }
     </style>
 </head>
+
 <body class="font-sans bg-white overflow-x-hidden">
-    
+
 
     <div id="loading-overlay" class="fixed inset-0 w-full h-full bg-white flex justify-center items-center z-50">
         <div class="loader border-4 border-gray-600 border-t-transparent rounded-full w-12 h-12 animate-spin"></div>
     </div>
 
 
-    <header id="header" class="fixed top-0 left-0 w-full p-5 flex justify-center items-center z-40 transition-all ease-in-out duration-500 h-20 font-family: 'Quicksand', sans-serif;">   
+    <header id="header"
+        class="fixed top-0 left-0 w-full p-5 flex justify-center items-center z-40 transition-all ease-in-out duration-500 h-20 font-family: 'Quicksand', sans-serif;">
 
         <div class="logo absolute left-10 lg:left-40">
             <img id="logo" src="logo.svg" alt="Logo" class="logo h-10 w-auto">
@@ -91,18 +102,28 @@
 
         <button class="absolute right-10 lg:right-40 text-white hover:opacity-80 transition-all cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" id="hamburger" class="h-6 w-6" stroke="white">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6 h16 M4 12 h16 m -7 6 h7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M4 6 h16 M4 12 h16 m -7 6 h7" />
             </svg>
         </button>
-    
+
+        <h3 id="textlogo" class="front-text font-thin text-2xl text-white md:hidden">LuxEstate</h3>
+
         <nav id="nav" class="flex gap-8 absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Home</a>
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">About</a>
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Listings</a>
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Services</a>
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Blog</a>
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Agents</a>
-        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Contact</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Home</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">About</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Listings</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Services</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Blog</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Agents</a>
+            <a href="#"
+                class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Contact</a>
         </nav>
     </header>
 
@@ -155,13 +176,16 @@
     </div>
 
     <!-- search -->
-    <div class="search-bar absolute top-3/4 left-10 lg:left-40 transform -translate-y-1/2 transition-all duration-500 ease-in-out">
-        <h1 class="front-text text-6xl text-white  mb-5 hover:cursor-default font-medium">Find Your <em class="italic">Dream</em> Home</h1>
+    <div
+        class="search-bar absolute top-3/4 left-10 lg:left-40 transform -translate-y-1/2 transition-all duration-500 ease-in-out">
+        <h1 class="front-text text-6xl text-white  mb-5 hover:cursor-default font-medium">Find Your <em
+                class="italic">Dream</em> Home</h1>
         <div class="search-fields flex gap-3 flex-wrap">
 
             <!-- location -->
             <div class="custom-dropdown relative w-48">
-                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
+                <div
+                    class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
                     Select Location
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
@@ -174,7 +198,8 @@
 
             <!-- type -->
             <div class="custom-dropdown relative w-48">
-                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
+                <div
+                    class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
                     Select Type
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
@@ -187,7 +212,8 @@
 
             <!-- prive -->
             <div class="custom-dropdown relative w-48">
-                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
+                <div
+                    class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
                     Select Price
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
@@ -198,62 +224,255 @@
                 </div>
             </div>
 
-            <button class="bg-[#1463F3] text-white px-6 py-2 rounded text-sm font-[Quicksand] h-50 hover:bg-[#2b72f4] transition-colors">Search</button>
+            <button
+                class="bg-transparent border border-white hover:border-[#1463F3] hover:bg-[#1463F3] text-white px-6 py-2 rounded-sm text-sm font-[Quicksand] h-50 transition-all ease-in-out duration-300">Search</button>
         </div>
     </div>
 
-    <section class="p-16 bg-white text-center">
-        <h2 class="front-text text-4xl md:text-5xl text-gray-900 mb-6">
+    <section class="p-16 bg-white text-center flex justify-center items-center flex-col">
+        <h2 class="front-text text-4xl md:text-5xl text-gray-900 mb-6 cursor-default">
             Welcome to LuxEstate
         </h2>
-        <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
-            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at 
-            nibh elementum imperdiet.
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed cursor-default">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
         </p>
+        <hr class="border-t border-gray-300 mt-16 w-3/4 md:w-2/3">
     </section>
-    
-    <!-- listings -->
-    <section class="p-12 bg-gray-50">
-        <h2 class="front-text text-3xl md:text-4xl font-normal text-gray-900 mb-10 text-center">
-            Featured Listings
-        </h2>
-        
-        <div class="listings space-y-10 max-w-4xl mx-auto">
-            <!-- listing 1 -->
-            <div class="listing-item transform scale-95 opacity-0 transition-all duration-1000 ease-in-out shadow-lg bg-white rounded-lg overflow-hidden">
-                <img src="images/house1.jpg" alt="Luxury Apartment" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Luxury Apartment in New York</h3>
-                    <p class="text-gray-600 mt-2">3 Bedrooms, 2 Bathrooms</p>
-                    <p class="text-gray-900 mt-4 font-bold">$500,000</p>
+
+    <!-- what we do -->
+    <section class="pb-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="front-text text-3xl md:text-3xl font-normal text-gray-900 mb-8 cursor-default">Key Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- service 1 -->
+                <div class="relative h-96 rounded-sm overflow-hidden group">
+                    <img src="images/sales.jpg" alt="sales" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
+                        <div>
+                            <h3 class="front-text text-2xl font-normal text-white mb-2">Property Sales & Purchases</h3>
+                            <p class="text-gray-200">We simplify the buying and selling process, handling negotiations
+                                and paperwork for a smooth transaction.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-    
-            <!-- listing 2 -->
-            <div class="listing-item transform scale-95 opacity-0 transition-all duration-1000 ease-in-out shadow-lg bg-white rounded-lg overflow-hidden">
-                <img src="images/house2.jpg" alt="Modern House" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Modern House in Los Angeles</h3>
-                    <p class="text-gray-600 mt-2">4 Bedrooms, 3 Bathrooms</p>
-                    <p class="text-gray-900 mt-4 font-bold">$1,200,000</p>
+                <!-- service 2 -->
+                <div class="relative h-96 rounded-sm overflow-hidden group">
+                    <img src="images/renders.jpg" alt="renders" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
+                        <div>
+                            <h3 class="front-text text-2xl font-normal text-white mb-2">Architectural Visualization</h3>
+                            <p class="text-gray-200">Our 3D modeling service helps you visualize property designs,
+                                layouts, and renovations with stunning detail.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-    
-            <!-- listing 3 -->
-            <div class="listing-item transform scale-95 opacity-0 transition-all duration-1000 ease-in-out shadow-lg bg-white rounded-lg overflow-hidden">
-                <img src="images/house3.jpg" alt="Villa" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Villa in Miami</h3>
-                    <p class="text-gray-600 mt-2">5 Bedrooms, 4 Bathrooms</p>
-                    <p class="text-gray-900 mt-4 font-bold">$2,500,000</p>
+                <!-- service 3 -->
+                <div class="relative h-96 rounded-sm overflow-hidden group">
+                    <img src="images/consulting.jpg" alt="consulting" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
+                        <div>
+                            <h3 class="front-text text-2xl font-normal text-white mb-2">Real Estate Consulting</h3>
+                            <p class="text-gray-200">Get expert advice on property investments, market trends, and legal
+                                matters to make informed decisions.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="py-16 bg-gray-50">
+        <h2 class="front-text text-3xl cursor-default md:text-4xl font-normal text-gray-900 mb-10 text-center">
+            Featured Listings
+        </h2>
+
+        <p class="text-lg cursor-default md:text-lg font-['Quicksand'] text-gray-900 mb-16 -mt-4 text-center">
+            The most popular listings our team has picked for you.
+        </p>
+
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- listing 1 -->
+            <div class="listing-item flex flex-col md:flex-row mb-10 bg-white">
+                <img src="images/house1.jpg" alt="Luxury Apartment" class="w-full md:w-1/2 h-96 object-cover">
+                <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                    <h3 class="front-text text-2xl cursor-default font-normal text-gray-900 mb-4">Luxury Apartment in
+                        New York</h3>
+                    <p class="text-gray-600 mb-4 cursor-default">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem
+                        at nibh elementum imperdiet.</p>
+                    <p class="front-text text-xl font-semibold cursor-default text-blue-600">$500,000</p>
+                    <button
+                        class="bg-transparent border border-gray-600 rounded-sm text-gray-700 w-1/3 px-4 py-2 mt-10 hover:bg-[#2b72f4] hover:text-white hover:border-[#2b72f4] transition-colors ease-in-out duration-300">View
+                        Details</button>
+                </div>
+            </div>
+
+            <!-- listing 2 -->
+            <div class="listing-item flex flex-col md:flex-row mb-10 bg-white">
+                <img src="images/house2.jpg" alt="Luxury Apartment"
+                    class="w-full md:w-1/2 h-96 object-cover md:order-last">
+                <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                    <h3 class="front-text cursor-default text-2xl font-normal text-gray-900 mb-4">Modern House in Los
+                        Angeles</h3>
+                    <p class="text-gray-600 cursor-default mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem
+                        at nibh elementum imperdiet.</p>
+                    <p class="front-text text-xl cursor-default font-semibold text-blue-600">$1,200,000</p>
+                    <button
+                        class="bg-transparent border border-gray-600 rounded-sm text-gray-700 w-1/3 px-4 py-2 mt-10 hover:bg-[#2b72f4] hover:text-white hover:border-[#2b72f4] transition-colors ease-in-out duration-300">View
+                        Details</button>
+                </div>
+            </div>
+
+            <!-- listing 3 -->
+            <div class="listing-item flex flex-col md:flex-row -mb-5 bg-white">
+                <img src="images/house3.jpg" alt="Luxury Apartment" class="w-full md:w-1/2 h-96 object-cover">
+                <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                    <h3 class="front-text cursor-default text-2xl font-normal text-gray-900 mb-4">Villa in Miami</h3>
+                    <p class="text-gray-600 cursor-default mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem
+                        at nibh elementum imperdiet.</p>
+                    <p class="front-text cursor-default text-xl font-semibold text-blue-600">$2,500,000</p>
+                    <button
+                        class="bg-transparent border border-gray-600 rounded-sm text-gray-700 w-1/3 px-4 py-2 mt-10 hover:bg-[#2b72f4] hover:text-white hover:border-[#2b72f4] transition-colors ease-in-out duration-300">View
+                        Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- image section -->
+    <div class="relative h-[500px] bg-cover bg-center" style="background-image: url('images/bg2.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative max-w-6xl mx-auto h-full flex items-center justify-end px-4">
+            <div class="bg-white p-8 max-w-md">
+                <h2 class="front-text text-2xl font-normal text-gray-900 mb-4 cursor-default">Discover Your Dream Home
+                </h2>
+                <p class="text-gray-600 mb-6 cursor-default">Explore our exclusive listings and find the perfect
+                    property for you. Whether it's a luxury apartment, a modern house, or a stunning villa, we have it
+                    all.</p>
+                <button
+                    class="bg-transparent border border-gray-600 rounded-sm text-gray-700 px-6 py-2 hover:bg-[#2b72f4] hover:text-white hover:border-[#2b72f4] transition-colors ease-in-out duration-300">View
+                    All Listings</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="front-text text-3xl md:text-4xl font-normal text-gray-900 mb-4 text-center cursor-default">
+                Explore More Properties</h2>
+            <p class="text-gray-600 text-center mb-8 cursor-default">Check out our latest additions to the portfolio.
+            </p>
+            <!-- cards container -->
+            <div class="hide-scrollbar overflow-x-auto">
+                <div class="flex space-x-6 pb-6">
+                    <!-- card 1 -->
+                    <div
+                        class="flex-none w-72 bg-white cursor-pointer shadow-md rounded-sm hover:shadow-sm transition-shadow duration-500">
+                        <img src="images/house4.jpg" alt="House 4" class="w-full h-48 object-cover rounded-t-sm">
+                        <div class="p-6">
+                            <h3 class="front-text text-xl font-normal text-gray-900 mb-2">Cozy Cottage</h3>
+                            <p class="text-gray-600 mb-4">Perfect for a small family or a weekend getaway.</p>
+                            <p class="front-text text-lg font-semibold text-blue-600">$350,000</p>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div
+                        class="flex-none w-72 bg-white cursor-pointer shadow-md rounded-sm hover:shadow-sm transition-shadow duration-500">
+                        <img src="images/house5.jpg" alt="House 5" class="w-full h-48 object-cover rounded-t-sm">
+                        <div class="p-6">
+                            <h3 class="front-text text-xl font-normal text-gray-900 mb-2">Modern Loft</h3>
+                            <p class="text-gray-600 mb-4">Stylish and spacious, ideal for urban living.</p>
+                            <p class="front-text text-lg font-semibold text-blue-600">$450,000</p>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div
+                        class="flex-none w-72 bg-white cursor-pointer shadow-md rounded-sm hover:shadow-sm transition-shadow duration-500">
+                        <img src="images/house6.jpg" alt="House 6" class="w-full h-48 object-cover rounded-t-sm">
+                        <div class="p-6">
+                            <h3 class="front-text text-xl font-normal text-gray-900 mb-2">Beach House</h3>
+                            <p class="text-gray-600 mb-4">Enjoy the ocean breeze from your doorstep.</p>
+                            <p class="front-text text-lg font-semibold text-blue-600">$1,200,000</p>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div
+                        class="flex-none w-72 bg-white shadow-md cursor-pointer rounded-sm hover:shadow-sm transition-shadow duration-500">
+                        <img src="images/house7.jpg" alt="House 7" class="w-full h-48 object-cover rounded-t-sm">
+                        <div class="p-6">
+                            <h3 class="front-text text-xl font-normal text-gray-900 mb-2">Mountain Retreat</h3>
+                            <p class="text-gray-600 mb-4">Escape to the mountains in this serene retreat.</p>
+                            <p class="front-text text-lg font-semibold text-blue-600">$850,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- stay connected section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="front-text text-3xl md:text-4xl font-normal text-gray-900 mb-4 cursor-default">Stay Connected
+            </h2>
+            <p class="text-gray-600 mb-8 cursor-default">Subscribe to our newsletter for the latest updates and
+                exclusive offers.</p>
+            <form class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <input type="email" placeholder="Enter your email"
+                    class="w-full md:w-96 px-6 py-3 border border-gray-700 rounded-sm focus:outline-none">
+                <button
+                    class="bg-transparent border border-gray-600 rounded-sm text-gray-700 px-8 py-3 hover:bg-[#2b72f4] hover:text-white hover:border-[#2b72f4] transition-colors ease-in-out duration-300">Stay
+                    Connected</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- logo and info -->
+            <div>
+                <img src="logo.svg" alt="Logo" class="h-10 w-auto mb-4">
+                <p class="text-gray-400">LuxEstate - Your trusted partner in luxury real estate.</p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">About</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">Listings</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Contact Us</h3>
+                <p class="text-gray-400">Email: info@luxestate.com</p>
+                <p class="text-gray-400">Phone: +386 12 345 678-</p>
+                <p class="text-gray-400">Address: 123 Luxury Street, 1000 Ljubljana, Slovenia</p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <img id="logo" src="instagram.svg" alt="Logo" class="logo h-10 w-auto">
+                    <img id="logo" src="facebook.svg" alt="Logo" class="logo h-10 w-auto">
+                    <img id="logo" src="linkedin.svg" alt="Logo" class="logo h-10 w-auto">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
     <!-- contact -->
-    <button id="contact" class="contact-button fixed bottom-5 right-5 bg-[#1463F3] text-white px-6 py-2 rounded-md text-sm font-[Quicksand] hover:bg-[#2b72f4] transition-all duration-300 ease-in-out opacity-0">Contact Us</button>
+    <button id="contact"
+        class="contact-button fixed bottom-5 right-5 bg-[#1463F3] text-white px-6 py-2 rounded-sm text-sm font-[Quicksand] hover:bg-[#2b72f4] transition-all duration-300 ease-in-out opacity-0">Contact
+        Us</button>
 
     <script>
         let slideIndex = 0;
@@ -280,24 +499,28 @@
             const header = document.getElementById("header");
             const logo = document.getElementById("logo");
             const hamburger = document.getElementById('hamburger');
-            if (window.scrollY > window.innerHeight * 8/9) {
+            const textlogo = document.getElementById('textlogo');
+            if (window.scrollY > window.innerHeight * 8 / 9) {
                 header.classList.remove("blurred", "transparent");
                 header.classList.add("scrolled");
                 logo.src = 'logo-black.svg';
                 hamburger.setAttribute('stroke', 'black');
+                textlogo.style.color = 'black';
             } else if (window.scrollY > 0) {
                 header.classList.remove("scrolled", "transparent");
                 header.classList.add("blurred");
                 logo.src = 'logo.svg';
                 hamburger.setAttribute('stroke', 'white');
+                textlogo.style.color = 'white';
             } else {
                 header.classList.remove("scrolled", "blurred");
                 header.classList.add("transparent");
                 logo.src = 'logo.svg';
                 hamburger.setAttribute('stroke', 'white');
+                textlogo.style.color = 'white';
             }
         });
-        
+
         window.addEventListener("scroll", () => {
             const contact = document.getElementById("contact");
             if (window.scrollY > 50) {
@@ -336,27 +559,6 @@
                 });
             }
         });
-
-
-        function animateListings() {
-        const listings = document.querySelectorAll(".listing-item");
-        const windowHeight = window.innerHeight;
-
-        listings.forEach((listing, index) => {
-            const position = listing.getBoundingClientRect().top;
-
-            if (position < windowHeight - 100) {
-                listing.style.opacity = "1";
-                listing.style.transform = "scale(1)";
-                listing.style.transitionDelay = `${index * 0.2}s`;
-            }
-        });
-    }
-
-    window.addEventListener("scroll", animateListings);
-    animateListings();
-
-
     </script>
 </body>
 </html>
