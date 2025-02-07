@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="theme-color" content="black">
-    <title>Real Estate Website</title>
+    <title>LuxEstate</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <style>
-        .playfair-display {
-            font-family: 'Playfair Display', serif;
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 200;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
+        .front-text {
+            font-family: 'Playfair Display', serif;
         }
 
         .slides {
@@ -26,17 +30,36 @@
             opacity: 1;
         }
 
-        #header {
-            transition: backdrop-filter 0.5s ease;
+        #header.scrolled {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(77, 77, 77, 0.1);
         }
 
-        .backdrop-blur-md {
+        #header.scrolled a {
+            color: black;
+        }
+
+        #header.scrolled button{
+            
+        }
+
+        #header.blurred {
             backdrop-filter: blur(10px);
+        }
+
+        #header.transparent {
+            background-color: transparent;
+            color: white;
+        }
+
+        #header.transparent a {
+            color: white;
         }
 
         .contact-button {
             opacity: 0;
         }
+
         .contact-visible{
             opacity: 1;
         }
@@ -60,26 +83,26 @@
     </div>
 
 
-    <header id="header" class="fixed top-0 left-0 w-full p-5 flex justify-center items-center bg-transparent z-40 transition-all h-20">
+    <header id="header" class="fixed top-0 left-0 w-full p-5 flex justify-center items-center z-40 transition-all ease-in-out duration-500 h-20 font-family: 'Quicksand', sans-serif;">   
 
         <div class="logo absolute left-10 lg:left-40">
-            <img src="logo.svg" alt="Logo" class="logo h-10 w-auto">
+            <img id="logo" src="logo.svg" alt="Logo" class="logo h-10 w-auto">
         </div>
 
-        <button id="hamburger" class="absolute right-10 lg:right-40 text-white hover:opacity-80 transition-opacity cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" stroke="white">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6 h16 M4 12 h16 m -7 6 h7" />
+        <button class="absolute right-10 lg:right-40 text-white hover:opacity-80 transition-all cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" id="hamburger" class="h-6 w-6" stroke="white">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6 h16 M4 12 h16 m -7 6 h7" />
             </svg>
         </button>
     
         <nav id="nav" class="flex gap-8 absolute left-1/2 transform -translate-x-1/2 hidden md:flex">
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">Home</a>
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">About</a>
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">Listings</a>
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">Services</a>
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">Blog</a>
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">Agents</a>
-            <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity">Contact</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Home</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">About</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Listings</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Services</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Blog</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Agents</a>
+        <a href="#" class="text-white text-sm font-light hover:opacity-80 transition-opacity font-[Quicksand]">Contact</a>
         </nav>
     </header>
 
@@ -132,76 +155,105 @@
     </div>
 
     <!-- search -->
-    <div class="search-bar absolute top-3/4 left-10 lg:left-40 transform -translate-y-1/2">
-        <h1 class="playfair-display text-6xl text-white mb-5 hover:cursor-default">Find Your <em class="italic">Dream</em> Home</h1>
+    <div class="search-bar absolute top-3/4 left-10 lg:left-40 transform -translate-y-1/2 transition-all duration-500 ease-in-out">
+        <h1 class="front-text text-6xl text-white  mb-5 hover:cursor-default font-medium">Find Your <em class="italic">Dream</em> Home</h1>
         <div class="search-fields flex gap-3 flex-wrap">
 
             <!-- location -->
             <div class="custom-dropdown relative w-48">
-                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-light h-50 text-gray-500">
+                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
                     Select Location
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
                 <div class="options absolute top-full left-0 w-full bg-white border border-gray-300 border-t-0 hidden">
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">New York</div>
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">Los Angeles</div>
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">Chicago</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">New York</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">Los Angeles</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">Chicago</div>
                 </div>
             </div>
 
             <!-- type -->
             <div class="custom-dropdown relative w-48">
-                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-light h-50 text-gray-500">
+                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
                     Select Type
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
                 <div class="options absolute top-full left-0 w-full bg-white border border-gray-300 border-t-0 hidden">
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">Apartment</div>
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">House</div>
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">Villa</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">Apartment</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">House</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">Villa</div>
                 </div>
             </div>
 
             <!-- prive -->
             <div class="custom-dropdown relative w-48">
-                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-light h-50 text-gray-500">
+                <div class="selected-option rounded bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
                     Select Price
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
                 <div class="options absolute top-full left-0 w-full bg-white border border-gray-300 border-t-0 hidden">
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">$100,000 - $200,000</div>
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">$200,000 - $500,000</div>
-                    <div class="p-2 text-sm font-light hover:bg-gray-100 cursor-pointer">$500,000+</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">$100,000 - $200,000</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">$200,000 - $500,000</div>
+                    <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">$500,000+</div>
                 </div>
             </div>
 
-            <button class="bg-[#1463F3] text-white px-6 py-2 rounded text-sm font-light h-50 hover:bg-[#2b72f4] transition-colors">Search</button>
+            <button class="bg-[#1463F3] text-white px-6 py-2 rounded text-sm font-[Quicksand] h-50 hover:bg-[#2b72f4] transition-colors">Search</button>
         </div>
     </div>
 
+    <section class="p-16 bg-white text-center">
+        <h2 class="front-text text-4xl md:text-5xl text-gray-900 mb-6">
+            Welcome to LuxEstate
+        </h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at 
+            nibh elementum imperdiet.
+        </p>
+    </section>
+    
     <!-- listings -->
-    <div class="listings p-12 bg-gray-50 ">
-        <h2 class="text-3xl mb-5">Featured Listings</h2>
-        <div class="listing-item bg-white p-5 mb-5 rounded-lg shadow-sm">
-            <h3 class="text-xl">Beautiful Apartment in New York</h3>
-            <p class="text-sm">3 Bedrooms, 2 Bathrooms</p>
-            <p class="text-sm">$500,000</p>
+    <section class="p-12 bg-gray-50">
+        <h2 class="front-text text-3xl md:text-4xl font-normal text-gray-900 mb-10 text-center">
+            Featured Listings
+        </h2>
+        
+        <div class="listings space-y-10 max-w-4xl mx-auto">
+            <!-- listing 1 -->
+            <div class="listing-item transform scale-95 opacity-0 transition-all duration-1000 ease-in-out shadow-lg bg-white rounded-lg overflow-hidden">
+                <img src="images/house1.jpg" alt="Luxury Apartment" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Luxury Apartment in New York</h3>
+                    <p class="text-gray-600 mt-2">3 Bedrooms, 2 Bathrooms</p>
+                    <p class="text-gray-900 mt-4 font-bold">$500,000</p>
+                </div>
+            </div>
+    
+            <!-- listing 2 -->
+            <div class="listing-item transform scale-95 opacity-0 transition-all duration-1000 ease-in-out shadow-lg bg-white rounded-lg overflow-hidden">
+                <img src="images/house2.jpg" alt="Modern House" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Modern House in Los Angeles</h3>
+                    <p class="text-gray-600 mt-2">4 Bedrooms, 3 Bathrooms</p>
+                    <p class="text-gray-900 mt-4 font-bold">$1,200,000</p>
+                </div>
+            </div>
+    
+            <!-- listing 3 -->
+            <div class="listing-item transform scale-95 opacity-0 transition-all duration-1000 ease-in-out shadow-lg bg-white rounded-lg overflow-hidden">
+                <img src="images/house3.jpg" alt="Villa" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Villa in Miami</h3>
+                    <p class="text-gray-600 mt-2">5 Bedrooms, 4 Bathrooms</p>
+                    <p class="text-gray-900 mt-4 font-bold">$2,500,000</p>
+                </div>
+            </div>
         </div>
-        <div class="listing-item bg-white p-5 mb-5 rounded-lg shadow-sm">
-            <h3 class="text-xl">Modern House in Los Angeles</h3>
-            <p class="text-sm">4 Bedrooms, 3 Bathrooms</p>
-            <p class="text-sm">$1,200,000</p>
-        </div>
-
-        <div id="scroll-down-arrow" class="absolute bottom-7 left-1/2 transform -translate-x-1/2 opacity-40 hover:opacity-0 transition-opacity ease-in-out duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-bounce" stroke="white">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14 l-7 7 m0 0 l-7 -7" />
-            </svg>
-        </div>
-    </div>
+    </section>
 
     <!-- contact -->
-    <button id="contact" class="contact-button fixed bottom-5 right-5 bg-[#1463F3] text-white px-6 py-2 rounded-md text-sm font-light hover:bg-[#2b72f4] transition-all duration-300 ease-in-out opacity-0">Contact Us</button>
+    <button id="contact" class="contact-button fixed bottom-5 right-5 bg-[#1463F3] text-white px-6 py-2 rounded-md text-sm font-[Quicksand] hover:bg-[#2b72f4] transition-all duration-300 ease-in-out opacity-0">Contact Us</button>
 
     <script>
         let slideIndex = 0;
@@ -225,13 +277,26 @@
         });
 
         window.addEventListener("scroll", () => {
-                const header = document.getElementById("header");
-                if (window.scrollY > 0) {
-                    header.classList.add("backdrop-blur-md");
-                } else {
-                    header.classList.remove("backdrop-blur-md");
-                }
-            });
+            const header = document.getElementById("header");
+            const logo = document.getElementById("logo");
+            const hamburger = document.getElementById('hamburger');
+            if (window.scrollY > window.innerHeight * 8/9) {
+                header.classList.remove("blurred", "transparent");
+                header.classList.add("scrolled");
+                logo.src = 'logo-black.svg';
+                hamburger.setAttribute('stroke', 'black');
+            } else if (window.scrollY > 0) {
+                header.classList.remove("scrolled", "transparent");
+                header.classList.add("blurred");
+                logo.src = 'logo.svg';
+                hamburger.setAttribute('stroke', 'white');
+            } else {
+                header.classList.remove("scrolled", "blurred");
+                header.classList.add("transparent");
+                logo.src = 'logo.svg';
+                hamburger.setAttribute('stroke', 'white');
+            }
+        });
         
         window.addEventListener("scroll", () => {
             const contact = document.getElementById("contact");
@@ -272,14 +337,25 @@
             }
         });
 
-        window.addEventListener("scroll", () => {
-            const arrow = document.getElementById("scroll-down-arrow");
-            if (window.scrollY > 0) {
-                arrow.style.display = "none";
-            } else {
-                arrow.style.display = "block";
+
+        function animateListings() {
+        const listings = document.querySelectorAll(".listing-item");
+        const windowHeight = window.innerHeight;
+
+        listings.forEach((listing, index) => {
+            const position = listing.getBoundingClientRect().top;
+
+            if (position < windowHeight - 100) {
+                listing.style.opacity = "1";
+                listing.style.transform = "scale(1)";
+                listing.style.transitionDelay = `${index * 0.2}s`;
             }
         });
+    }
+
+    window.addEventListener("scroll", animateListings);
+    animateListings();
+
 
     </script>
 </body>
