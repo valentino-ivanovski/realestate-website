@@ -494,19 +494,19 @@
             if (window.scrollY > window.innerHeight * 8 / 9) {
                 header.classList.remove("blurred", "transparent");
                 header.classList.add("scrolled");
-                logo.src = 'logo-black.svg';
+                logo.style.filter = "invert(1)";
                 hamburger.setAttribute('stroke', 'black');
                 textlogo.style.color = 'black';
             } else if (window.scrollY > 0) {
                 header.classList.remove("scrolled", "transparent");
                 header.classList.add("blurred");
-                logo.src = 'logo.svg';
+                logo.style.filter = "invert(0)";
                 hamburger.setAttribute('stroke', 'white');
                 textlogo.style.color = 'white';
             } else {
                 header.classList.remove("scrolled", "blurred");
                 header.classList.add("transparent");
-                //logo.src = 'logo.svg';
+                logo.style.filter = "invert(0)";
                 hamburger.setAttribute('stroke', 'white');
                 textlogo.style.color = 'white';
             }
