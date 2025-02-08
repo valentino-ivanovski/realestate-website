@@ -167,16 +167,12 @@
     </div>
 
     <!-- search -->
-    <div
-        class="search-bar absolute top-2/3 lg:top-3/4 left-10 lg:left-40 transform -translate-y-28 lg:transform lg:-translate-y-1/2 transition-all duration-500 ease-in-out">
-        <h1 class="front-text text-6xl text-white  mb-5 hover:cursor-default font-medium">Find Your <em
-                class="italic">Dream</em> Home</h1>
-        <div class="search-fields flex gap-3 flex-wrap">
-
+    <div class="search-bar absolute top-2/4 lg:top-3/4 left-1/2 lg:left-1/3 transform -translate-x-1/2 -translate-y-16 lg:-translate-y-1/2 transition-all duration-500 ease-in-out w-full lg:w-auto">
+        <h1 class="front-text text-6xl text-white mb-5 hover:cursor-default font-medium text-center lg:text-left">Find Your <em class="italic">Dream</em> Home</h1>
+        <div class="search-fields flex flex-col lg:flex-row gap-3 items-center lg:items-start w-full lg:w-auto">
             <!-- location -->
-            <div class="custom-dropdown relative w-48">
-                <div
-                    class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
+            <div class="custom-dropdown relative w-3/4 lg:w-48">
+                <div class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-12 text-gray-500">
                     Select Location
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
@@ -186,11 +182,10 @@
                     <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">Chicago</div>
                 </div>
             </div>
-
+    
             <!-- type -->
-            <div class="custom-dropdown relative w-48">
-                <div
-                    class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
+            <div class="custom-dropdown relative w-3/4 lg:w-48">
+                <div class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-12 text-gray-500">
                     Select Type
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
@@ -200,11 +195,10 @@
                     <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">Villa</div>
                 </div>
             </div>
-
+    
             <!-- prive -->
-            <div class="custom-dropdown relative w-48">
-                <div
-                    class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-50 text-gray-500">
+            <div class="custom-dropdown relative w-3/4 lg:w-48">
+                <div class="selected-option rounded-sm bg-white border border-gray-300 cursor-pointer flex justify-between items-center p-3 text-sm font-[Quicksand] h-12 text-gray-500">
                     Select Price
                     <span class="arrow w-2 h-2 border-r-2 border-b-2 border-[#2E86C1] transform rotate-45"></span>
                 </div>
@@ -214,9 +208,11 @@
                     <div class="p-2 text-sm font-[Quicksand] hover:bg-gray-100 cursor-pointer">$500,000+</div>
                 </div>
             </div>
-
-            <button
-                class="bg-transparent border border-white hover:border-[#1463F3] hover:bg-[#1463F3] text-white px-6 py-2 rounded-sm text-sm font-[Quicksand] h-50 transition-all ease-in-out duration-300">Search</button>
+    
+            <!-- search -->
+            <button class="bg-transparent border border-white hover:border-[#1463F3] hover:bg-[#1463F3] text-white px-6 py-2 rounded-sm text-sm font-[Quicksand] h-12 transition-all ease-in-out duration-300 w-1/4 lg:w-28">
+                Search
+            </button>
         </div>
     </div>
 
@@ -244,8 +240,8 @@
                     <img src="images/sales.jpg" alt="sales" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
                         <div>
-                            <h3 class="front-text text-2xl font-normal text-white mb-2">Property Sales & Purchases</h3>
-                            <p class="text-gray-200">We simplify the buying and selling process, handling negotiations
+                            <h3 class="front-text text-2xl font-normal text-white mb-2 cursor-default">Property Sales & Purchases</h3>
+                            <p class="text-gray-200 cursor-default">We simplify the buying and selling process, handling negotiations
                                 and paperwork for a smooth transaction.</p>
                         </div>
                     </div>
@@ -255,8 +251,8 @@
                     <img src="images/renders.jpg" alt="renders" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
                         <div>
-                            <h3 class="front-text text-2xl font-normal text-white mb-2">Architectural Visualization</h3>
-                            <p class="text-gray-200">Our 3D modeling service helps you visualize property designs,
+                            <h3 class="front-text text-2xl font-normal text-white mb-2 cursor-default">Architectural Visualization</h3>
+                            <p class="text-gray-200 cursor-default">Our 3D modeling service helps you visualize property designs,
                                 layouts, and renovations with stunning detail.</p>
                         </div>
                     </div>
@@ -266,8 +262,8 @@
                     <img src="images/consulting.jpg" alt="consulting" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
                         <div>
-                            <h3 class="front-text text-2xl font-normal text-white mb-2">Real Estate Consulting</h3>
-                            <p class="text-gray-200">Get expert advice on property investments, market trends, and legal
+                            <h3 class="front-text text-2xl font-normal text-white mb-2 cursor-default">Real Estate Consulting</h3>
+                            <p class="text-gray-200 cursor-default">Get expert advice on property investments, market trends, and legal
                                 matters to make informed decisions.</p>
                         </div>
                     </div>
